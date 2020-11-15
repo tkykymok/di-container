@@ -1,5 +1,8 @@
 package com.sample.di_container.application.product;
 
+import javax.inject.Named;
+
+@Named
 public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
