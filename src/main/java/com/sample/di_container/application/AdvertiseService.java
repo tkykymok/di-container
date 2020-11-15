@@ -1,4 +1,9 @@
-package com.sample.di_container;
+package com.sample.di_container.application;
+
+import com.sample.di_container.application.product.Product;
+import com.sample.di_container.application.product.ProductRepository;
+import com.sample.di_container.application.tweet.Tweet;
+import com.sample.di_container.application.tweet.TwitterAdapter;
 
 public class AdvertiseService {
 

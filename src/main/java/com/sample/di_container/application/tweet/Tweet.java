@@ -1,4 +1,4 @@
-package com.sample.di_container;
+package com.sample.di_container.application.tweet;
 
 public class Tweet {
 

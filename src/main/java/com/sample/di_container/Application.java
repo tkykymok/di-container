@@ -1,5 +1,11 @@
 package com.sample.di_container;
 
+import com.sample.di_container.application.AdvertiseService;
+import com.sample.di_container.application.product.ProductRepository;
+import com.sample.di_container.application.product.ProductRepositoryImpl;
+import com.sample.di_container.application.tweet.TwitterAdapter;
+import com.sample.di_container.application.tweet.TwitterAdapterImpl;
+
 /**
  * Hello world!
  *

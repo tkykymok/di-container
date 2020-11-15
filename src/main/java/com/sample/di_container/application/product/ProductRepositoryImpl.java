@@ -1,4 +1,4 @@
-package com.sample.di_container;
+package com.sample.di_container.application.product;
 
 public class ProductRepositoryImpl implements ProductRepository {
 

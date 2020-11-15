@@ -1,9 +1,14 @@
-package com.sample.di_container;
+package com.sample.di_container.application;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import com.sample.di_container.application.product.Product;
+import com.sample.di_container.application.product.ProductRepository;
+import com.sample.di_container.application.tweet.Tweet;
+import com.sample.di_container.application.tweet.TwitterAdapter;
 
 /**
  * Unit test for simple App.
