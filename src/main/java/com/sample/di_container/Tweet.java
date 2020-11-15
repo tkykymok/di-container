@@ -10,6 +10,6 @@ public class Tweet {
 
     @Override
     public String toString() {
-        return "message:" + message;
+        return "message：" + message;
     }
 }
