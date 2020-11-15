@@ -2,34 +2,33 @@ package com.sample.di_container;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.lang.reflect.Field;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import com.sample.di_container.application.AdvertiseService;
 import com.sample.di_container.application.tweet.TwitterAdapter;
-import com.sample.di_container.application.tweet.TwitterAdapterImpl;
 
 public class ApplicationTest {
     @Nested
     class Context {
         @Test
-        @DisplayName("context.getAdvertiseServiceBean()")
-        void test1() {
+        @DisplayName("Beanの登録テスト")
+        void test1() throws Exception {
             final Application.Context context = new Application.Context();
-
-            final AdvertiseService advertiseService = context.getAdvertiseServiceBean();
+            // AdvertiseServiceを取得
+            final AdvertiseService advertiseService = context.getBean(AdvertiseService.class);
             assertNotNull(advertiseService);
-        }
 
-        @Test
-        @DisplayName("beanの登録")
-        void testBeanRegister() {
+            // BeanクラスがInjectされていること
+            Field field = advertiseService.getClass().getDeclaredField("twitterAdapter");
+            field.setAccessible(true);
+            final Object twitterAdapter = field.get(advertiseService);
+            assertNotNull(twitterAdapter);
+            assertTrue(TwitterAdapter.class.isAssignableFrom(twitterAdapter.getClass()));        }
 
-            final Application.Context context = new Application.Context();
-            // TODO 検証対象のクラスがプロダクションの都合に依存しているのをやめたい
-            final TwitterAdapter beanClazz = context.getBean(TwitterAdapterImpl.class);
-            assertNotNull(beanClazz);
         }
-    }
 }
+
